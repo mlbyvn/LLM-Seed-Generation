@@ -27,6 +27,16 @@ This thesis investigates the use of LLMs (e.g., OpenAI GPT models) to generate h
 
 ---
 
+## Dataset of contracts
+
+Existing datasets share one problem: contracts have outdated solidity versions (0.4.24 - 0.7). Although solidity 0.8.0 [was introduced late in 2020](https://github.com/ethereum/solidity/releases/tag/v0.8.0), there are still no big datasets with vulnerable contracts, that use pragma above 0.8.0. There were several ways to solve the problem:
+
+1. Use contracts from exisiting datasets, re-writing them for newer pragma versions. Cons:
+2. Generate vulnerable contracts with bug synthesizers like [Fuzzle]() or [Olympia](https://github.com/Rigorous-Software-Engineering/olympia). Cons:
+3. Get detected real-world vulnerabilities from audit reports on [Solodit](https://solodit.cyfrin.io/) and "textbook" bugs from different CTFs, then inject them in sample contracts manually.
+
+---
+
 ## Features
 
 - **LLM-Driven Seed Generation:** Use of advanced LLMs to generate seed inputs.
