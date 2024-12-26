@@ -5,13 +5,14 @@ Welcome to the repository for my thesis, **"Leveraging LLM-generated seeds for m
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Features](#features)
-3. [Repository Structure](#repository-structure)
-4. [Setup](#setup)
-5. [Usage](#usage)
-6. [Results](#results)
-7. [Contributing](#contributing)
-8. [License](#license)
+2. [Dataset of contracts](#dataset-of-contracts)
+3. [Features](#features)
+4. [Repository Structure](#repository-structure)
+5. [Setup](#setup)
+6. [Usage](#usage)
+7. [Results](#results)
+8. [Contributing](#contributing)
+9. [License](#license)
 
 ---
 
