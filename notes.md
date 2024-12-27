@@ -16,6 +16,7 @@ Echidna belongs to a specific family of fuzzers: property-based fuzzing, which i
 
 1. Properties of Ethereum Request for Comments standards (ERC20, ERC721, ERC4626)
 2. Usage of "wierd" ERC20 tokens
+   - Tokens with weird decimals (like USDC)
 3. Protocol invariants
 
 ---
