@@ -39,11 +39,6 @@ This thesis investigates the use of LLMs (e.g., OpenAI GPT models) to generate h
 
 One common issue with existing datasets is that they feature contracts with outdated Solidity versions (ranging from 0.4.24 to 0.7). Despite Solidity 0.8.0 being introduced in late 2020, there remains a lack of large datasets containing vulnerable contracts utilizing pragma versions above 0.8.0. To address this problem, several approaches were considered:
 
-1. Use contracts from exisiting datasets, re-writing them for newer pragma versions. Cons: Too much labor, refactoring can introduce new uninteded bugs.
-2. Generate vulnerable contracts with bug synthesizers. Cons: contracts are too generic, do not use any libraries or ERCs.
-3. Get detected real-world vulnerabilities from audit reports on [Solodit](https://solodit.cyfrin.io/) and "textbook" bugs from different CTFs, then inject them in sample contracts manually. This way real-world exploits can be introduced, keeping the codebase compact and neat.
-
-
 1. **Refactor existing datasets**  
    - **Approach:** Use contracts from current datasets and rewrite them to support newer pragma versions.  
    - **Drawbacks:** This is highly labor-intensive and introduces a risk of unintentionally adding new bugs during the refactoring process.  
