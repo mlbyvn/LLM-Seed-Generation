@@ -1,18 +1,25 @@
 # Leveraging LLM-generated Seeds for Mutation-based Fuzzing in Solidity Smart Contracts
 
-Welcome to the repository for my thesis, **"Leveraging LLM-generated seeds for mutation-based fuzzing in Solidity smart contracts."** This project explores how Large Language Models (LLMs) can be utilized to generate high-quality initial inputs (seeds) for mutation-based fuzzing, improving the detection of vulnerabilities in Ethereum smart contracts.
+Welcome to **"Leveraging LLM-generated seeds for mutation-based fuzzing in Solidity smart contracts"** repository. This project explores how Large Language Models (LLMs) can be utilized to generate high-quality initial inputs (seeds) for mutation-based fuzzing, improving the detection of vulnerabilities in Ethereum smart contracts.
 
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Dataset of contracts](#dataset-of-contracts)
-3. [Features](#features)
-4. [Repository Structure](#repository-structure)
-5. [Setup](#setup)
-6. [Usage](#usage)
-7. [Results](#results)
-8. [Contributing](#contributing)
-9. [License](#license)
+2. [Clarification](#clarification)
+3. [Dataset of contracts](#dataset-of-contracts)
+4. [Features](#features)
+5. [Repository Structure](#repository-structure)
+6. [Setup](#setup)
+7. [Usage](#usage)
+8. [Results](#results)
+9. [Contributing](#contributing)
+10. [License](#license)
+
+---
+
+## Clarification
+
+
 
 ---
 
@@ -30,20 +37,31 @@ This thesis investigates the use of LLMs (e.g., OpenAI GPT models) to generate h
 
 ## Dataset of contracts
 
-Existing datasets share one problem: contracts have outdated solidity versions (0.4.24 - 0.7). Although solidity 0.8.0 [was introduced late in 2020](https://github.com/ethereum/solidity/releases/tag/v0.8.0), there are still no big datasets with vulnerable contracts, that use pragma above 0.8.0. There were several ways to solve the problem:
+One common issue with existing datasets is that they feature contracts with outdated Solidity versions (ranging from 0.4.24 to 0.7). Despite Solidity 0.8.0 being introduced in late 2020, there remains a lack of large datasets containing vulnerable contracts utilizing pragma versions above 0.8.0. To address this problem, several approaches were considered:
 
-1. Use contracts from exisiting datasets, re-writing them for newer pragma versions. Cons:
-2. Generate vulnerable contracts with bug synthesizers like [Fuzzle]() or [Olympia](https://github.com/Rigorous-Software-Engineering/olympia). Cons:
-3. Get detected real-world vulnerabilities from audit reports on [Solodit](https://solodit.cyfrin.io/) and "textbook" bugs from different CTFs, then inject them in sample contracts manually.
+1. Use contracts from exisiting datasets, re-writing them for newer pragma versions. Cons: Too much labor, refactoring can introduce new uninteded bugs.
+2. Generate vulnerable contracts with bug synthesizers. Cons: contracts are too generic, do not use any libraries or ERCs.
+3. Get detected real-world vulnerabilities from audit reports on [Solodit](https://solodit.cyfrin.io/) and "textbook" bugs from different CTFs, then inject them in sample contracts manually. This way real-world exploits can be introduced, keeping the codebase compact and neat.
 
+
+1. **Refactor existing datasets**  
+   - **Approach:** Use contracts from current datasets and rewrite them to support newer pragma versions.  
+   - **Drawbacks:** This is highly labor-intensive and introduces a risk of unintentionally adding new bugs during the refactoring process.  
+
+2. **Generate contracts with bug synthesizers**  
+   - **Approach:** Use automated tools to create vulnerable contracts.  
+   - **Drawbacks:** The generated contracts tend to be overly simplistic, lacking the use of libraries, ERC standards, or real-world complexity.  
+
+3. **Leverage real-world vulnerabilities and known exploits**  
+   - **Approach:** Extract real-world vulnerabilities from audit reports on platforms like [Solodit](https://solodit.cyfrin.io/) and supplement them with "textbook" bugs from Capture The Flag (CTF) challenges. These exploits can then be manually injected into sample contracts.  
+   - **Advantages:** This method ensures the inclusion of realistic vulnerabilities while keeping the dataset concise and practical.  
 ---
 
 ## Features
 
 - **LLM-Driven Seed Generation:** Use of advanced LLMs to generate seed inputs.
-- **Custom Mutation Engine:** Implements mutation strategies optimized for Solidity.
-- **Vulnerability Detection:** Focused on common issues like reentrancy, overflow/underflow, and unchecked external calls.
-- **Metrics and Analytics:** Detailed reports on fuzzing coverage and detected vulnerabilities.
+- **Vulnerability Detection:**
+- **Metrics and Analytics:** 
 
 ---
 
