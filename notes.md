@@ -27,6 +27,13 @@ Since pragma 0.8 was released, over- and underflows, which are one of the main b
 
 Echidna belongs to a specific family of fuzzers: property-based fuzzing, which is heavily inspired by QuickCheck. In contrast to a classic fuzzer that tries to find crashes, Echidna aims to break user-defined invariants.
 
+"When fuzzing smart contracts, the goal is to identify a sequence of transactions that exposes a software fault. The final trans-
+action of the sequence triggers a software fault, while
+the preceding transactions set up the state of the contract
+such that the fault can be triggered. In this sense, testing
+Ethereum smart contracts is a variant of testing stateful
+software, a highly challenging proble" - from EF/CF, needs re-writing
+
 ---
 
 ## Properties & Vulnerabilities
