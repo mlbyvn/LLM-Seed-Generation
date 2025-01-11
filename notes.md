@@ -25,6 +25,8 @@ Since pragma 0.8 was released, over- and underflows, which are one of the main b
 
 "Mutation-based" refers to a term from traditional software fuzzing: 
 
+Traditional fuzz testing is well established and the main goal is to crash the program by stressing it with random inputs. That does not really apply to smart contracts because they do not really have crashes. If a tx reverts, it's not because a smart contract "crashed" by any means, it just reached "incorrect" state. We want to still imploy fuzzing, this is where property-based testing comes in. Instead of trying to crash a programm, a solidity fuzzer will try to test properties and validate whether the properties do not hold. 
+
 Echidna belongs to a specific family of fuzzers: property-based fuzzing, which is heavily inspired by QuickCheck. In contrast to a classic fuzzer that tries to find crashes, Echidna aims to break user-defined invariants.
 
 "When fuzzing smart contracts, the goal is to identify a sequence of transactions that exposes a software fault. The final trans-
