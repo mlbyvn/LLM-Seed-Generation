@@ -1,0 +1,3 @@
+corpusDir: "corpusDir"
+testMode: assertion
+testLimit: 100000
